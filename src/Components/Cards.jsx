@@ -7,10 +7,10 @@ function Cards() {
 
 
 
-    useEffect(() => {
+    
         localStorage.setItem('cart', JSON.stringify(cartsItem));
         console.log(cartsItem);
-      }, [cartsItem]);
+      
 
 
    function handleCartItem (item){
