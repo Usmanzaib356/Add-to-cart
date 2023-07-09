@@ -7,6 +7,9 @@ function Header() {
   const totalQuantity = cartsItem.reduce((total, cartItem) => {
     return total + cartItem.quantity;
   }, 0);
+
+
+  const displayedQuantity = totalQuantity > 99 ? '99+' : totalQuantity;
   return (
     <>
 
@@ -28,7 +31,7 @@ function Header() {
                 <Link to="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent  md:hover:text-blue-700 md:p-0 dark:text-white " aria-current="page">Shop</Link>
               </li>
               <li>
-                <Link to="/cart" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent  ">Cart  <span className='text-green-500 ms-1'>{totalQuantity}
+                <Link to="/cart" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent  ">Cart  <span className='text-green-500 ms-1'>{displayedQuantity}
                 </span>    </Link>
               </li>
             </ul>

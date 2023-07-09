@@ -3,8 +3,10 @@ import React, { useEffect } from 'react'
 import useAuth from "../hooks/useAuth"
 import Card from './Card'
 function Shop() {
-
+    
     const { cards, setCards} = useAuth()
+
+        
 
     // aoixs
 

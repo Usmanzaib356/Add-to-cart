@@ -1,34 +1,40 @@
 import React, { useEffect } from 'react'
 import useAuth from '../hooks/useAuth'
 
+
 function Card({ products }) {
-
-    const { cartsItem, setCartsItem } = useAuth()
-
-
     
+    const { cartsItem, setCartsItem } = useAuth()
+    
+    
+
+
 
     const addToCart = (item) => {
         const existItem = cartsItem.find((cart) => cart.id === item.id);
       
         if (existItem) {
           const updatedCart = cartsItem.map((cartItem) =>
-            cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
           );
+          
           setCartsItem(updatedCart);
+          
         } else {
+          
           setCartsItem((prevItems) => [...prevItems, { ...item, quantity: 1 }]);
+          
         }
       };
       
-
-
-
+      
     
-    useEffect(() => {
-        localStorage.setItem('carts', JSON.stringify(cartsItem));
+    // useEffect(() => {
+    //     localStorage.setItem('carts', JSON.stringify(cartsItem));
+    //     console.log(cartsItem)
 
-    }, [cartsItem]);
+    // }, [addToCart]);
+    
 
     return (
         <>
