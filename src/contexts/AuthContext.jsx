@@ -8,7 +8,14 @@ const AuthContextProvider = ({ children }) => {
 
     const [cards,setCards] = useState([])
     const [cartsItem,setCartsItem] = useState([])
+
+
+
+    
   
+
+
+
   return (
     <AuthContext.Provider value={{cards,setCards,cartsItem,setCartsItem}}>
       {children}
